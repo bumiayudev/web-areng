@@ -246,8 +246,8 @@
 </section>
 
 <!-- Footer -->
-<footer class="py-3 bg-black text-center text-muted">
-  <small>© 2026 Bumiayu Arang. All Rights Reserved.</small>
+<footer class="py-3 bg-black text-center text-white">
+  <small>© <span id="copyright"></span> Bumiayu Arang. All Rights Reserved.</small>
 </footer>
 
 <!-- Floating WhatsApp CTA -->
@@ -260,6 +260,10 @@
 
 
 <script>
+const d = new Date();
+const currentYear = d.getFullYear();
+document.getElementById('copyright').innerHTML = currentYear;
+
 function hubungiKami() {
 window.open('https://wa.me/6281466863157?text=Halo%20saya%20tertarik%20dengan%20produk%20arang', '_blank');
 }
