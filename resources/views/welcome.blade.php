@@ -164,33 +164,17 @@
       <p class="text-muted">Arang alami dengan kualitas terbaik</p>
     </div>
     <div class="row g-4">
+    @foreach($products as $product)
       <div class="col-md-4">
         <div class="card h-100 shadow-sm">
-          <img src="{{ asset("images/arang kelapa.jpeg") }}" class="card-img-top product-img" alt="Arang Tempurung">
+          <img src="{{ asset("storage/".$product->image) }}" class="card-img-top product-img" alt="{{ $product->name }}">
           <div class="card-body">
-            <h5 class="card-title">Arang Tempurung Kelapa</h5>
-            <p class="card-text">Daya bakar tinggi, abu rendah, cocok untuk BBQ, shisha, dan industri.</p>
+            <h5 class="card-title">{{ $product->name }}</h5>
+            <p class="card-text">{{ $product->description }}</p>
           </div>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="card h-100 shadow-sm">
-          <img src="{{ asset("images/arang kayu mahoni.jpeg") }}" class="card-img-top product-img" alt="Arang Kayu">
-          <div class="card-body">
-            <h5 class="card-title">Arang Kayu Keras</h5>
-            <p class="card-text">Stabil, tahan lama, cocok untuk restoran, pemanggangan, dan UMKM.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card h-100 shadow-sm">
-          <img src="{{ asset("images/briket.jpeg") }}" class="card-img-top product-img" alt="Briket Arang">
-          <div class="card-body">
-            <h5 class="card-title">Briket Arang</h5>
-            <p class="card-text">Bentuk presisi, panas merata, efisien dan ramah lingkungan.</p>
-          </div>
-        </div>
-      </div>
+      @endforeach
     </div>
   </div>
 </section>
