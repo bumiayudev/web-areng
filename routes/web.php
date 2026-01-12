@@ -12,7 +12,10 @@ Route::get('/login', [UserController::class, 'login'])->name('login')->middlewar
 Route::post('/login', [UserController::class, 'login_submit'])->name('login.submit');
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', function () {
-        return view('dashboard');
+        return view('dashboard', ['counts' => [
+            'users' => DB::table('users')->count(),
+            'products' => DB::table('products')->count(),
+        ]]);
     })->name('dashboard');
     Route::get('/logout', [UserController::class, 'logout'])->name('logout');
     Route::get('/users', [UserController::class, 'index'])->name('users.index');

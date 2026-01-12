@@ -15,11 +15,7 @@
                   <div class="row align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-uppercase mb-1">Products</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">3</div>
-                      {{-- <div class="mt-2 mb-0 text-muted text-xs">
-                        <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3</span>
-                        <span>Products</span>
-                      </div> --}}
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $counts['products'] }}</div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-calendar fa-2x text-primary"></i>
@@ -35,12 +31,8 @@
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-uppercase mb-1">Total User</div>
-                      <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">6</div>
-                      {{-- <div class="mt-2 mb-0 text-muted text-xs">
-                        <span class="text-success mr-2"><i class="fas fa-arrow-up"></i> 20.4%</span>
-                        <span>Since last month</span>
-                      </div> --}}
+                      <div class="text-xs font-weight-bold text-uppercase mb-1">Total Users</div>
+                      <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{ $counts['users'] }}</div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-users fa-2x text-info"></i>
