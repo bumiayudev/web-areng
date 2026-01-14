@@ -16,7 +16,7 @@
         <label for="image">Image</label>
         <input type="file" name="image" id="image" class="form-control">
         @if($product->image)
-            <img src="{{ Storage::url($product->image) }}" alt="{{ $product->name }}" width="100">
+            <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}" width="100" class="img-thumbnail mt-2">
         @endif
     </div>
     <button type="submit" class="btn btn-primary">Update Product</button>
