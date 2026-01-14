@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ $seo['title'] }}</title>
-  <meta name="description" content="{{ $seo['description'] }}">
-  <meta name="keywords" content="{{ $seo['keywords'] }}">
-  <meta property="og:title" content="{{ $seo['title'] }}">
-  <meta property="og:description" content="{{ $seo['description'] }}">
-  <meta property="og:image" content="{{ $seo['image'] }}">
+  <title>{{ $seo['title'] ?? 'Arang Tempurung Kelapa Premium | Export Quality | Arang Kelapa Bumiayu' }}</title>
+  <meta name="description" content="{{ $seo['description'] ?? 'Arang Tempurung Kelapa Premium | Export Quality' }}">
+  <meta name="keywords" content="{{ $seo['keywords'] ?? 'arang kelapa, arang tempurung kelapa, briket kelapa, arang ekspor' }}">
+  <meta property="og:title" content="{{ $seo['title'] ?? 'Arang Tempurung Kelapa Premium | Export Quality' }}">
+  <meta property="og:description" content="{{ $seo['description'] ?? 'Arang Tempurung Kelapa Premium | Export Quality' }}">
+  <meta property="og:image" content="{{ $seo['image'] ?? asset('images/briket.jpeg') }}">
 
     <!-- Canonical -->
   <link rel="canonical" href="{{ url()->current() }}">
@@ -202,57 +202,57 @@
 
 <!-- Footer -->
 <footer class="py-5">
-<div class="container">
-<div class="row">
-<!-- Sitemap -->
-<div class="col-md-4 mb-3">
-<h5 class="fw-bold">Sitemap</h5>
-<ul class="list-unstyled">
-<li><a href="#home" class="text-decoration-none text-light">Home</a></li>
-<li><a href="#produk" class="text-decoration-none text-light">Produk</a></li>
-<li><a href="#keunggulan" class="text-decoration-none text-light">Keunggulan</a></li>
-<li><a href="#kontak" class="text-decoration-none text-light">Kontak</a></li>
-</ul>
-</div>
+    <div class="container">
+    <div class="row">
+    <!-- Sitemap -->
+    <div class="col-md-4 mb-3">
+    <h5 class="fw-bold">Sitemap</h5>
+    <ul class="list-unstyled">
+    <li><a href="#home" class="text-decoration-none text-light">Home</a></li>
+    <li><a href="#produk" class="text-decoration-none text-light">Produk</a></li>
+    <li><a href="#keunggulan" class="text-decoration-none text-light">Keunggulan</a></li>
+    <li><a href="#kontak" class="text-decoration-none text-light">Kontak</a></li>
+    </ul>
+    </div>
 
 
-<!-- Sosial Media -->
-<div class="col-md-4 mb-3">
-<h5 class="fw-bold">Sosial Media</h5>
-<ul class="list-unstyled">
-<li>📘 <a href="#" class="text-decoration-none text-light">Facebook</a></li>
-<li>📸 <a href="#" class="text-decoration-none text-light">Instagram</a></li>
-<li>🎥 <a href="#" class="text-decoration-none text-light">YouTube</a></li>
-<li>💬 <a href="https://wa.me/6281386053773" target="_blank" class="text-decoration-none text-light">WhatsApp</a></li>
-</ul>
-</div>
+    <!-- Sosial Media -->
+    <div class="col-md-4 mb-3">
+    <h5 class="fw-bold">Sosial Media</h5>
+    <ul class="list-unstyled">
+    <li>📘 <a href="#" class="text-decoration-none text-light">Facebook</a></li>
+    <li>📸 <a href="#" class="text-decoration-none text-light">Instagram</a></li>
+    <li>🎥 <a href="#" class="text-decoration-none text-light">YouTube</a></li>
+    <li>💬 <a href="https://wa.me/6281466863157" target="_blank" class="text-decoration-none text-light">WhatsApp</a></li>
+    </ul>
+    </div>
 
 
-<!-- Alamat Produksi -->
-<div class="col-md-4 mb-3">
-<h5 class="fw-bold">Alamat Produksi</h5>
-<p class="mb-1">CV Arang Kelapa Bumiayu</p>
-<p class="mb-1">Desa Babakan, Kec. Mustika Jaya</p>
-<p class="mb-1">Kota Bekasi</p>
-<p class="mb-1">Jawa Barat, Indonesia</p>
-</div>
-</div>
+    <!-- Alamat Produksi -->
+    <div class="col-md-4 mb-3">
+    <h5 class="fw-bold">Alamat Produksi</h5>
+    <p class="mb-1">CV Arang Kelapa Bumiayu</p>
+    <p class="mb-1">Desa Babakan, Kec. Mustika Jaya</p>
+    <p class="mb-1">Kota Bekasi</p>
+    <p class="mb-1">Jawa Barat, Indonesia</p>
+    </div>
+    </div>
 
 
-<hr class="border-light">
-<p class="text-center mb-0">© 2026 Arang Tempurung Kelapa | Indonesia</p>
-</div>
+    <hr class="border-light">
+    <p class="text-center mb-0">© 2026 Arang Tempurung Kelapa | Indonesia</p>
+    </div>
 </footer>
 
 <!-- WhatsApp Floating Button -->
-<a href="https://wa.me/6281386053773?text=Halo%20saya%20tertarik%20dengan%20produk%20arang%20tempurung%20kelapa%20Anda.Terima%20kasih!"
+<a href="https://wa.me/6281466863157?text=Halo%20saya%20tertarik%20dengan%20produk%20arang%20tempurung%20kelapa%20Anda%20tawarkan.Bolehkah%20kita%20berdiskusi%20lebih%20lanjut?Terima%20kasih!"
    class="wa-float" target="_blank" aria-label="Chat WhatsApp">
   <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="55">
 </a>
 
 <!-- Bootstrap 5 JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script type="application/ld+json">
+{{-- <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Organization",
@@ -266,33 +266,43 @@
     "addressCountry": "ID"
   }
 }
-</script>
+</script> --}}
 <script>
     // Typing effect
   document.addEventListener('DOMContentLoaded', function() {
-     function typeText(element) {
-    const text = element.getAttribute('data-text');
-    let index = 0;
-    element.textContent = '';
+    const typingElements = document.querySelectorAll('.typing-text');
+    typingElements.forEach(el => {
+      const texts = el.getAttribute('data-text').split('|');
+      let index = 0;
+      let charIndex = 0;
+      let currentText = '';
+      let isDeleting = false;
 
-    const interval = setInterval(() => {
-      element.textContent += text[index];
-      index++;
-      if (index === text.length) {
-        clearInterval(interval);
+      function type() {
+        if (index >= texts.length) index = 0;
+        currentText = texts[index];
+
+        if (isDeleting) {
+          el.textContent = currentText.substring(0, charIndex--);
+          if (charIndex < 0) {
+            isDeleting = false;
+            index++;
+            setTimeout(type, 500);
+          } else {
+            setTimeout(type, 50);
+          }
+        } else {
+          el.textContent = currentText.substring(0, charIndex++);
+          if (charIndex > currentText.length) {
+            isDeleting = true;
+            setTimeout(type, 2000);
+          } else {
+            setTimeout(type, 100);
+          }
+        }
       }
-    }, 80);
-  }
-
-  document.querySelectorAll('.typing-text').forEach(el => {
-    typeText(el);
-  });
-
-  document.getElementById('heroCarousel').addEventListener('slid.bs.carousel', function () {
-    document.querySelectorAll('.typing-text').forEach(el => {
-      typeText(el);
+      type();
     });
-  });
 });
   function showAlert(produk) {
     alert('Anda memilih produk: ' + produk + '\nSilakan hubungi kami untuk pemesanan.');
@@ -305,5 +315,7 @@
     e.target.reset();
   }
 </script>
+
 </body>
 </html>
+
