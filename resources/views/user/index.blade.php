@@ -6,7 +6,8 @@
         <div class="col-md-12">
             <h1>Users</h1>
               <div class="float-right"><a href="{{ route('users.create') }}" class="btn btn-outline-info mb-4">Add User</a></div>
-            <table class="table table-bordered">
+            <div class="table-responsive">
+                <table class="table table-bordered">
                 <thead>
                     <tr>
                         <th>ID</th>
@@ -18,7 +19,7 @@
                 <tbody>
                     @foreach($users as $user)
                         <tr>
-                            <td>{{ $user->id }}</td>
+                            <td>{{ $loop->iteration }}</td>
                             <td>{{ $user->name }}</td>
                             <td>{{ $user->email }}</td>
                             <td>
@@ -33,6 +34,7 @@
                     @endforeach
                 </tbody>
             </table>
+            </div>
 
             {{ $users->links() }} <!-- Pagination links -->
         </div>

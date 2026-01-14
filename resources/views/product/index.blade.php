@@ -3,7 +3,8 @@
     <div class="container">
         <h1>Product List</h1>
         <div class="float-right"><a href="{{ route('product.create') }}" class="btn btn-outline-info mb-4">Add Product</a></div>
-        <table class="table">
+       <div class="table-responsive">
+         <table class="table table-bordered">
             <thead>
                 <tr>
                     <th>ID</th>
@@ -14,7 +15,7 @@
             <tbody>
                 @foreach($products as $product)
                     <tr>
-                        <td>{{ $product->id }}</td>
+                        <td>{{ $loop->iteration }}</td>
                         <td>{{ $product->name }}</td>
                         <td>
                             <a href="{{ route('product.edit', $product->id) }}" class="btn btn-outline-primary">Edit</a>
@@ -29,6 +30,7 @@
                 @endforeach
             </tbody>
         </table>
+       </div>
 
         {{ $products->links() }} <!-- Pagination links -->
     </div>
