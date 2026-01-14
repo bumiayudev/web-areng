@@ -6,7 +6,13 @@ use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\DB;
 
 Route::get('/', function () {
-    return view('welcome', ['products' => DB::table('products')->orderBy('created_at', 'asc')->limit(6)->get()]);
+    return view('welcome', ['products' => DB::table('products')->orderBy('created_at', 'asc')->limit(6)->get(),
+    'seo' => [
+            'title' => 'Arang Tempurung Kelapa Premium | Export Quality',
+            'description' => 'Produsen arang tempurung kelapa Indonesia kualitas ekspor',
+            'keywords' => 'arang kelapa, charcoal export, coconut charcoal',
+            'image' => asset('images/briket.jpeg')
+        ]]);
 });
 Route::get('/login', [UserController::class, 'login'])->name('login')->middleware('guest');
 Route::post('/login', [UserController::class, 'login_submit'])->name('login.submit');

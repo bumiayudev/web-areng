@@ -3,10 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Arang Tempurung Kelapa Premium</title>
-  <meta name="description" content="Produk arang tempurung kelapa premium dengan kualitas ekspor, ramah lingkungan, dan panas tahan lama.">
-  <meta name="keywords" content="arang tempurung kelapa, arang kelapa premium, arang ramah lingkungan, arang tahan lama, arang ekspor, briket kelapa, arang BBQ, arang shisha">
-  <meta name="author" content="Arang Kelapa">
+  <title>{{ $seo['title'] }}</title>
+  <meta name="description" content="{{ $seo['description'] }}">
+  <meta name="keywords" content="{{ $seo['keywords'] }}">
+  <meta property="og:title" content="{{ $seo['title'] }}">
+  <meta property="og:description" content="{{ $seo['description'] }}">
+  <meta property="og:image" content="{{ $seo['image'] }}">
+
+    <!-- Canonical -->
+  <link rel="canonical" href="{{ url()->current() }}">
   <link rel="icon" href="{{ asset('images/briket.jpeg') }}" type="image/x-icon">
   <!-- Bootstrap 5 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -247,6 +252,21 @@
 
 <!-- Bootstrap 5 JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "CV Arang Kelapa Bumiayu",
+  "url": "{{ url('/') }}",
+  "logo": "{{ asset('images/briket.jpeg') }}",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Kota Bekasi",
+    "addressRegion": "Jawa Barat",
+    "addressCountry": "ID"
+  }
+}
+</script>
 <script>
     // Typing effect
   document.addEventListener('DOMContentLoaded', function() {
