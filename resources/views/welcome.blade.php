@@ -1,104 +1,6 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ $seo['title'] ?? 'Arang Tempurung Kelapa Premium | Export Quality | Arang Kelapa Bumiayu' }}</title>
-  <meta name="description" content="{{ $seo['description'] ?? 'Arang Tempurung Kelapa Premium | Export Quality' }}">
-  <meta name="keywords" content="{{ $seo['keywords'] ?? 'arang kelapa, arang tempurung kelapa, briket kelapa, arang ekspor' }}">
-  <meta property="og:title" content="{{ $seo['title'] ?? 'Arang Tempurung Kelapa Premium | Export Quality' }}">
-  <meta property="og:description" content="{{ $seo['description'] ?? 'Arang Tempurung Kelapa Premium | Export Quality' }}">
-  <meta property="og:image" content="{{ $seo['image'] ?? asset('images/briket.jpeg') }}">
-
-    <!-- Canonical -->
-  <link rel="canonical" href="{{ url()->current() }}">
-  <link rel="icon" href="{{ asset('images/briket.jpeg') }}" type="image/x-icon">
-  <!-- Bootstrap 5 CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    body {
-      scroll-behavior: smooth;
-    }
-    .hero {
-      background-size: cover;
-      background-position: center;
-      color: white;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-    }
-    .product-card:hover {
-      transform: translateY(-8px);
-      transition: 0.3s;
-    }
-    footer {
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      color: #e0e0e0;
-    }
-    .gradient-navbar {
-      background: linear-gradient(135deg, #1f4037, #99f2c8);
-    }
-    .gradient-navbar .nav-link,
-    .gradient-navbar .navbar-brand {
-      color: #ffffff !important;
-      font-weight: 500;
-    }
-    .gradient-navbar .nav-link:hover {
-      color: #ffe082 !important;
-    }
-    .wa-float {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      z-index: 999;
-      background: #25d366;
-      border-radius: 50%;
-      padding: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-      transition: transform 0.3s ease;
-      animation: wa-pulse 2s infinite;
-    }
-    .wa-float:hover {
-      transform: scale(1.1);
-    }
-     @keyframes wa-pulse {
-      0% {
-        transform: scale(1);
-        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
-      }
-      70% {
-        transform: scale(1.08);
-        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
-      }
-      100% {
-        transform: scale(1);
-        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
-      }
-    }
-  </style>
-</head>
-<body>
-
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top gradient-navbar">
-  <div class="container">
-    <a class="navbar-brand fw-bold" href="#">Arang Kelapa</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="#produk">Produk</a></li>
-        <li class="nav-item"><a class="nav-link" href="#keunggulan">Keunggulan</a></li>
-        <li class="nav-item"><a class="nav-link" href="#kontak">Kontak</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
+@include("partial.header")
 <!-- Hero Slider -->
-<section id="home">
+{{-- <section id="home">
     <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000" data-bs-pause="false" data-bs-touch="true">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
@@ -131,6 +33,37 @@
             </div>
             </div>
             </div>
+        </div>
+    </div>
+</section> --}}
+ <!-- HERO SECTION -->
+<section class="hero" id="home">
+    <div class="hero-bg"></div>
+
+    <div class="hero-container">
+        <div class="hero-content">
+            <span class="badge">Produk Unggulan</span>
+
+                <!-- ===== TEKS ASLI DISIMPAN DI HTML ===== -->
+            <h1 class="typing" data-speed="70" data-delay="1500">
+                Arang Tempurung Kelapa<br>
+                <span>Kualitas Premium</span>
+            </h1>
+
+            <p class="typing" data-speed="25" data-delay="2000">
+                Arang tempurung kelapa berkualitas tinggi, ramah lingkungan,
+                tahan lama, dan siap memenuhi kebutuhan rumah tangga hingga ekspor.
+            </p>
+
+            <div class="hero-actions">
+                <a href="#produk" class="btn-primary">Lihat Produk</a>
+                <a href="#kontak" class="btn-outline">Hubungi Kami</a>
+            </div>
+        </div>
+
+        <div class="hero-image">
+            <img src="{{ asset('images/produksi-briket-dari-arang-tempurung-kelapa.jpg') }}"
+                    alt="Produk Arang Kelapa">
         </div>
     </div>
 </section>
@@ -200,122 +133,5 @@
   </div>
 </section>
 
-<!-- Footer -->
-<footer class="py-5">
-    <div class="container">
-    <div class="row">
-    <!-- Sitemap -->
-    <div class="col-md-4 mb-3">
-    <h5 class="fw-bold">Sitemap</h5>
-    <ul class="list-unstyled">
-    <li><a href="#home" class="text-decoration-none text-light">Home</a></li>
-    <li><a href="#produk" class="text-decoration-none text-light">Produk</a></li>
-    <li><a href="#keunggulan" class="text-decoration-none text-light">Keunggulan</a></li>
-    <li><a href="#kontak" class="text-decoration-none text-light">Kontak</a></li>
-    </ul>
-    </div>
-
-
-    <!-- Sosial Media -->
-    <div class="col-md-4 mb-3">
-    <h5 class="fw-bold">Sosial Media</h5>
-    <ul class="list-unstyled">
-    <li>📘 <a href="#" class="text-decoration-none text-light">Facebook</a></li>
-    <li>📸 <a href="#" class="text-decoration-none text-light">Instagram</a></li>
-    <li>🎥 <a href="#" class="text-decoration-none text-light">YouTube</a></li>
-    <li>💬 <a href="https://wa.me/6281466863157" target="_blank" class="text-decoration-none text-light">WhatsApp</a></li>
-    </ul>
-    </div>
-
-
-    <!-- Alamat Produksi -->
-    <div class="col-md-4 mb-3">
-    <h5 class="fw-bold">Alamat Produksi</h5>
-    <p class="mb-1">CV Arang Kelapa Bumiayu</p>
-    <p class="mb-1">Desa Babakan, Kec. Mustika Jaya</p>
-    <p class="mb-1">Kota Bekasi</p>
-    <p class="mb-1">Jawa Barat, Indonesia</p>
-    </div>
-    </div>
-
-
-    <hr class="border-light">
-    <p class="text-center mb-0">© 2026 Arang Tempurung Kelapa | Indonesia</p>
-    </div>
-</footer>
-
-<!-- WhatsApp Floating Button -->
-<a href="https://wa.me/6281466863157?text=Halo%20saya%20tertarik%20dengan%20produk%20arang%20tempurung%20kelapa%20Anda%20tawarkan.Bolehkah%20kita%20berdiskusi%20lebih%20lanjut?Terima%20kasih!"
-   class="wa-float" target="_blank" aria-label="Chat WhatsApp">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="55">
-</a>
-
-<!-- Bootstrap 5 JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-{{-- <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "CV Arang Kelapa Bumiayu",
-  "url": "{{ url('/') }}",
-  "logo": "{{ asset('images/briket.jpeg') }}",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Kota Bekasi",
-    "addressRegion": "Jawa Barat",
-    "addressCountry": "ID"
-  }
-}
-</script> --}}
-<script>
-    // Typing effect
-  document.addEventListener('DOMContentLoaded', function() {
-    const typingElements = document.querySelectorAll('.typing-text');
-    typingElements.forEach(el => {
-      const texts = el.getAttribute('data-text').split('|');
-      let index = 0;
-      let charIndex = 0;
-      let currentText = '';
-      let isDeleting = false;
-
-      function type() {
-        if (index >= texts.length) index = 0;
-        currentText = texts[index];
-
-        if (isDeleting) {
-          el.textContent = currentText.substring(0, charIndex--);
-          if (charIndex < 0) {
-            isDeleting = false;
-            index++;
-            setTimeout(type, 500);
-          } else {
-            setTimeout(type, 50);
-          }
-        } else {
-          el.textContent = currentText.substring(0, charIndex++);
-          if (charIndex > currentText.length) {
-            isDeleting = true;
-            setTimeout(type, 2000);
-          } else {
-            setTimeout(type, 100);
-          }
-        }
-      }
-      type();
-    });
-});
-  function showAlert(produk) {
-    alert('Anda memilih produk: ' + produk + '\nSilakan hubungi kami untuk pemesanan.');
-  }
-
-  function sendMessage(e) {
-    e.preventDefault();
-    const nama = document.getElementById('nama').value;
-    alert('Terima kasih ' + nama + ', pesan Anda telah dikirim!');
-    e.target.reset();
-  }
-</script>
-
-</body>
-</html>
+@include("partial.footer")
 

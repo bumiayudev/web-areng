@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\BlogController;
 use Illuminate\Support\Facades\DB;
 
 Route::get('/', function () {
@@ -14,6 +15,8 @@ Route::get('/', function () {
             'image' => asset('images/briket.jpeg')
         ]]);
 });
+Route::get('/blog', [BlogController::class, 'index'])->name('blog');
+Route::get('/blog/{slug}', [BlogController::class, 'detail'])->name('blog.detail');
 Route::get('/login', [UserController::class, 'login'])->name('login')->middleware('guest');
 Route::post('/login', [UserController::class, 'login_submit'])->name('login.submit');
 Route::middleware(['auth'])->group(function () {
