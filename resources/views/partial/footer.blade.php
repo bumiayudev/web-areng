@@ -154,6 +154,6 @@
     e.target.reset();
   }
 </script>
-
+@stack('scripts')
 </body>
 </html>

@@ -22,16 +22,16 @@
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top gradient-navbar">
   <div class="container">
-    <a class="navbar-brand fw-bold" href="#">Arang Kelapa</a>
+    <a class="navbar-brand fw-bold" href="{{ route("home")."#home" }}">Arang Kelapa</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="#produk">Produk</a></li>
-        <li class="nav-item"><a class="nav-link" href="#keunggulan">Keunggulan</a></li>
-        <li class="nav-item"><a class="nav-link" href="#kontak">Kontak</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ route("home")."#home" }}">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ route("home")."#produk" }}">Produk</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ route("home")."#keunggulan" }}">Keunggulan</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ route("home")."#kontak" }}">Kontak</a></li>
         <li class="nav-item"><a href="{{ route("blog") }}" class="nav-link">Blog</a></li>
       </ul>
     </div>

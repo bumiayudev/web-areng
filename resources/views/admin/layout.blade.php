@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
   <meta charset="utf-8">
@@ -7,11 +7,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
   <link href="img/logo/logo.png" rel="icon">
   <title>RuangAdmin - Dashboard</title>
   <link href="{{ asset("vendor/fontawesome-free/css/all.min.css") }}" rel="stylesheet" type="text/css">
   <link href="{{ asset("vendor/bootstrap/css/bootstrap.min.css") }}" rel="stylesheet" type="text/css">
   <link href="{{ asset("css/ruang-admin.min.css") }}" rel="stylesheet">
+  <!-- Link CDN jQuery di sini -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<!-- DataTable -->
+<link href="https://cdn.datatables.net/v/dt/dt-2.3.6/datatables.min.css" rel="stylesheet" integrity="sha384-kl/GL6Bf/pDfgmgFKZ4XzwANesvO6EBSlfZFyztPhoFTDcL7H8rdOAYRXwGyOfCK" crossorigin="anonymous">
+<script src="https://cdn.datatables.net/v/dt/dt-2.3.6/datatables.min.js" integrity="sha384-18AyDs6cawP/DD9zgSqUrUeo+moSbSkFr4pe43ttGuiPDGYQitDsvTjtrDnVzrZg" crossorigin="anonymous"></script>
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote.min.css" rel="stylesheet">
+
 </head>
 
 <body id="page-top">
@@ -31,6 +39,13 @@
           <span>Dashboard</span></a>
       </li>
       <hr class="sidebar-divider">
+      <li class="nav-item">
+        <a class="nav-link" href="{{ route('home') }}" target="_blank">
+          <i class="fab fa-fw fa-chrome"></i>
+          <span>Website</span>
+        </a>
+      </li>
+      <hr class="sidebar-divider">
       <div class="sidebar-heading">
         Features
       </div>
@@ -45,6 +60,12 @@
         <a class="nav-link" href="{{ route('product.index') }}">
           <i class="fas fa-fw fa-palette"></i>
           <span>Products</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ route('blog.index') }}">
+          <i class="fas fa-fw fa-book"></i>
+          <span>Blogs</span>
         </a>
       </li>
     </ul>
@@ -141,6 +162,7 @@
   <script src="{{ asset("js/ruang-admin.min.js") }}"></script>
   <script src="{{ asset("vendor/chart.js/Chart.min.js") }}"></script>
   <script src="{{ asset("js/demo/chart-area-demo.js") }}"></script>
+  @stack('scripts')
 </body>
 
 </html>

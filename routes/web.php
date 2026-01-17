@@ -14,9 +14,10 @@ Route::get('/', function () {
             'keywords' => 'arang kelapa, charcoal export, coconut charcoal',
             'image' => asset('images/briket.jpeg')
         ]]);
-});
+})->name('home');
 Route::get('/blog', [BlogController::class, 'index'])->name('blog');
 Route::get('/blog/{slug}', [BlogController::class, 'detail'])->name('blog.detail');
+Route::get('/load_more', [BlogController::class, 'load_more'])->name('blog.load_more');
 Route::get('/login', [UserController::class, 'login'])->name('login')->middleware('guest');
 Route::post('/login', [UserController::class, 'login_submit'])->name('login.submit');
 Route::middleware(['auth'])->group(function () {
@@ -40,4 +41,11 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/products/{id}/edit', [ProductController::class, 'edit'])->name('product.edit');
     Route::put('/products/{id}', [ProductController::class, 'update'])->name('product.update');
     Route::delete('/products/{id}', [ProductController::class, 'destroy'])->name('product.destroy');
+    Route::get('/blogs', [BlogController::class, 'list'])->name('blog.index');
+    Route::get('/blogs/create', [BlogController::class, 'create'])->name('blog.create');
+    Route::post('/blogs/create', [BlogController::class, 'store'])->name('blog.store');
+    Route::get('/blogs/{id}/edit', [BlogController::class, 'edit'])->name('blog.edit');
+    Route::put('/blogs/{id}', [BlogController::class, 'update'])->name('blog.update');
+    Route::delete('/blogs/{id}/delete', [BlogController::class, 'destroy'])->name('blog.destroy');
+    Route::get('/blogs/data', [BlogController::class, 'data'])->name('blog.data');
 });

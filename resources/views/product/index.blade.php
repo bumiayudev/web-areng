@@ -18,11 +18,11 @@
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $product->name }}</td>
                         <td>
-                            <a href="{{ route('product.edit', $product->id) }}" class="btn btn-outline-primary">Edit</a>
+                            <a href="{{ route('product.edit', $product->id) }}" class="btn btn-sm btn-outline-warning">Edit</a>
                             <form action="{{ route('product.destroy', $product->id) }}" method="POST" style="display:inline;">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-outline-danger">Delete</button>
+                                <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
                             </form>
                             <!-- Add action buttons here -->
                         </td>
