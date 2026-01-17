@@ -23,29 +23,15 @@
                             <td>{{ $user->name }}</td>
                             <td>{{ $user->email }}</td>
                             <td>
-                                {{-- @if ($user->role == 'user')
-                                <a href="{{ route('users.edit', $user->id) }}" class="btn btn-sm btn-outline-warning">Edit</a>
-                                @elseif ($user->role == 'superadmin')
-                                <a href="{{ route('users.edit', $user->id) }}" class="btn btn-sm btn-outline-warning">Edit</a>&nbsp;
-                                <form action="{{ route('users.destroy', $user->id) }}" method="POST" style="display:inline;">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-sm btn-outline-danger" onclick="return confirm('Are you sure?')">Delete</button>
-                                </form>
-                                @else
-                                <span class="text-muted">No actions available</span>
-                                @endif --}}
                                 @if($user->id == auth()->user()->id && auth()->user()->role == 'superadmin')
                                 <a href="{{ route('users.edit', $user->id) }}" class="btn btn-sm btn-outline-warning">Edit</a>&nbsp;
+                                @else
+                                <a href="{{ route('users.edit', $user->id) }}" class="btn btn-sm btn-outline-warning">Edit</a>
                                 <form action="{{ route('users.destroy', $user->id) }}" method="POST" style="display:inline;">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-sm btn-outline-danger" onclick="return confirm('Are you sure?')">Delete</button>
                                 </form>
-                                @elseif($user->id == auth()->user()->id)
-                                <a href="{{ route('users.edit', $user->id) }}" class="btn btn-sm btn-outline-warning">Edit</a>
-                                @else
-                                <span class="text-muted">No actions available</span>
                                 @endif
                             </td>
                         </tr>
