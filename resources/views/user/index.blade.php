@@ -25,7 +25,7 @@
                             <td>
                                 @if($user->id == auth()->user()->id && auth()->user()->role == 'superadmin')
                                 <a href="{{ route('users.edit', $user->id) }}" class="btn btn-sm btn-outline-warning">Edit</a>&nbsp;
-                                @else
+                                @elseif($user->role != 'superadmin')
                                 <a href="{{ route('users.edit', $user->id) }}" class="btn btn-sm btn-outline-warning">Edit</a>
                                 <form action="{{ route('users.destroy', $user->id) }}" method="POST" style="display:inline;">
                                     @csrf

@@ -10,6 +10,7 @@
                 <li><a href="#produk" class="text-decoration-none text-light">Produk</a></li>
                 <li><a href="#keunggulan" class="text-decoration-none text-light">Keunggulan</a></li>
                 <li><a href="#kontak" class="text-decoration-none text-light">Kontak</a></li>
+                <li><a href="{{ route('blog') }}" class="text-decoration-none text-light">Blog</a></li>
                 </ul>
             </div>
 
@@ -22,6 +23,7 @@
                 <li>📸 <a href="#" class="text-decoration-none text-light">Instagram</a></li>
                 <li>🎥 <a href="#" class="text-decoration-none text-light">YouTube</a></li>
                 <li>💬 <a href="https://wa.me/6281466863157" target="_blank" class="text-decoration-none text-light">WhatsApp</a></li>
+                <li>📧 <a href="mailto:admin@bumiayuareng.com" class="text-decoration-none text-light">Email</a></li>
                 </ul>
             </div>
 
