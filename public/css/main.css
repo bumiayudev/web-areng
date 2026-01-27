@@ -379,6 +379,40 @@
     .blog-share a:hover {
         background: #2e7d32;
     }
+
+    .gallery-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 24px 60px;
+    text-align: center;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #e0e0e0;
+}
+.gallery-hero h1 {
+    font-size: 3rem;
+}
+.gallery-hero p {
+    max-width: 600px;
+    margin: 16px auto 0;
+    text-align: center;
+}
+.gallery-card {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+.gallery-card:hover {
+    transform: translateY(-8px);
+}
+.gallery-card img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
      /* ================= RESPONSIVE ================= */
     @media (max-width: 900px) {
         .hero-container {

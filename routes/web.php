@@ -1,10 +1,11 @@
 <?php
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\BlogController;
-use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\GalleryController;
 
 Route::get('/', function () {
     return view('welcome', ['products' => DB::table('products')->orderBy('created_at', 'asc')->limit(6)->get(),
@@ -18,6 +19,8 @@ Route::get('/', function () {
 Route::get('/blog', [BlogController::class, 'index'])->name('blog');
 Route::get('/blog/{slug}', [BlogController::class, 'detail'])->name('blog.detail');
 Route::get('/load_more', [BlogController::class, 'load_more'])->name('blog.load_more');
+Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
+Route::get('/gallery/load_more', [GalleryController::class, 'load_more'])->name('gallery.load_more');
 Route::get('/login', [UserController::class, 'login'])->name('login')->middleware('guest');
 Route::post('/login', [UserController::class, 'login_submit'])->name('login.submit');
 Route::middleware(['auth'])->group(function () {
@@ -48,4 +51,12 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/blogs/{id}', [BlogController::class, 'update'])->name('blog.update');
     Route::delete('/blogs/{id}/delete', [BlogController::class, 'destroy'])->name('blog.destroy');
     Route::get('/blogs/data', [BlogController::class, 'data'])->name('blog.data');
+    Route::get('/galleries', [GalleryController::class, 'list'])->name('gallery.index');
+    Route::get('/galleries/data', [GalleryController::class, 'data'])->name('gallery.data');
+    Route::get('/galleries/create', [GalleryController::class, 'create'])->name('gallery.create');
+    Route::post('/galleries/create', [GalleryController::class, 'store'])->name('gallery.store');
+    Route::get('/galleries/{id}/edit', [GalleryController::class, 'edit'])->name('gallery.edit');
+    Route::put('/galleries/{id}', [GalleryController::class, 'update'])->name('gallery.update');
+    Route::delete('/galleries/{id}/delete', [GalleryController::class, 'destroy'])->name('gallery.destroy');
+
 });
